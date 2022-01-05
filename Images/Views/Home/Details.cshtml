@@ -1,0 +1,270 @@
+﻿@model Images.Picture
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAll.cshtml";
+}
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Fashion Widget Flat Responsive Widget Template :: w3layouts</title>
+    <!-- jQuery (necessary JavaScript plugins) -->
+    <script src="js/bootstrap.js"></script>
+    <script src="~/Content/jquery-1.11.1.min.js"></script>
+    <script src="~/Content/jquery.flexisel.js"></script>
+    <!-- Custom Theme files -->
+    <link href="css/style.css" rel='stylesheet' type='text/css' />
+    <!-- Custom Theme files -->
+    <!--//theme-style-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Fashion Widget Responsive, Login form web template,Flat Pricing tables,Flat Drop downs  Sign up Web Templates, Flat Web Templates, Login signup Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <link href='//fonts.googleapis.com/css?family=Josefin+Sans:400,600,700' rel='stylesheet' type='text/css'>
+    <link href="~/Content/css-detail/style.css" rel="stylesheet" />
+    <!--//theme-style-->
+    <style>
+        .bg-left1 {
+            background-size: cover;
+            min-height: 426px;
+            position: relative;
+            float: left;
+            width: 50%;
+            margin:10px;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>Product Detail </h1>
+    <div class="main">
+        <div class="bg-left1">
+            <img src=@Url.Content("~/Content/images/"+(Model.url))  />
+        </div>
+        <div class="slide">
+            <div class="banner-info">
+                <div class="cont1 span_2_of_a1 simpleCart_shelfItem">
+                    <h4>@Html.DisplayFor(model => model.Name)</h4>
+                    <div class="clear"></div>
+                    <ul class="size">
+                        <h2>@Html.DisplayFor(model => model.Size)</h2>
+                     </ul>
+                        <ul class="size">
+                            <h2>@Html.DisplayFor(model => model.Type)</h2>
+                        </ul>
+                        <ul class="size">
+                            <h2>@Html.DisplayFor(model => model.Price)</h2>
+                        </ul>
+                        <div class="btn_form button item_add item_1">
+                            <form>
+                                <input type="submit" value="ดาวน์โหลด" title="">
+                            </form>
+                        </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="clear"></div>
+        <div class="bottom">
+            <ul id="flexiselDemo3">
+                <li>
+                    <div class="biseller-column">
+                        <a class="lightbox"  href="~/Content/images/ptop.png">
+                            <img src="~/Content/images/ptop.png" />
+                        </a>
+                        <div class="lightbox-target" id="one">
+                            <img src="images/1.jpg" alt="" />
+                            <a class="lightbox-close" href="#"> </a>
+
+                            <div class="clear"> </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="biseller-column">
+                        <a class="lightbox" href="~/Content/images/ptop.png">
+                            <img src="~/Content/images/ptop.png" />
+                        </a>
+                        <div class="lightbox-target" id="two">
+                            <img src="images/3.jpg" alt="" />
+                            <a class="lightbox-close" href="#"> </a>
+
+                            <div class="clear"> </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="biseller-column">
+                        <a class="lightbox" href="#four">
+                            <img src="images/2.jpg" alt="" />
+                        </a>
+                        <div class="lightbox-target" id="four">
+                            <img src="images/2.jpg" alt="" />
+                            <a class="lightbox-close" href="#"> </a>
+
+                            <div class="clear"> </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="biseller-column">
+                        <a class="lightbox" href="#five">
+                            <img src="images/5.jpg" alt="" />
+                        </a>
+                        <div class="lightbox-target" id="five">
+                            <img src="images/5.jpg" alt="" />
+                            <a class="lightbox-close" href="#"> </a>
+
+                            <div class="clear"> </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="biseller-column">
+                        <a class="lightbox" href="#six">
+                            <img src="images/6.jpg" alt="" />
+                        </a>
+                        <div class="lightbox-target" id="six">
+                            <img src="images/6.jpg" alt="" />
+                            <a class="lightbox-close" href="#"> </a>
+
+                            <div class="clear"> </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="biseller-column">
+                        <a class="lightbox" href="#seven">
+                            <img src="images/7.jpg" alt="" />
+                        </a>
+                        <div class="lightbox-target" id="seven">
+                            <img src="images/7.jpg" alt="" />
+                            <a class="lightbox-close" href="#"> </a>
+
+                            <div class="clear"> </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="biseller-column">
+                        <a class="lightbox" href="#night">
+                            <img src="images/8.jpg" alt="" />
+                        </a>
+                        <div class="lightbox-target" id="night">
+                            <img src="images/8.jpg" alt="" />
+                            <a class="lightbox-close" href="#"> </a>
+
+                            <div class="clear"> </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="biseller-column">
+                        <a class="lightbox" href="#ten">
+                            <img src="images/9.jpg" alt="" />
+                        </a>
+                        <div class="lightbox-target" id="ten">
+                            <img src="images/9.jpg" alt="" />
+                            <a class="lightbox-close" href="#"> </a>
+
+                            <div class="clear"> </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <script type="text/javascript">
+				 $(window).load(function() {
+					$("#flexiselDemo3").flexisel({
+						visibleItems:6,
+						animationSpeed: 1000,
+						autoPlay: true,
+						autoPlaySpeed: 3000,
+						pauseOnHover: true,
+						enableResponsiveBreakpoints: true,
+				    	responsiveBreakpoints: {
+				    		portrait: {
+				    			changePoint:480,
+				    			visibleItems:3
+				    		},
+				    		landscape: {
+				    			changePoint:640,
+				    			visibleItems:3
+				    		},
+				    		tablet: {
+				    			changePoint:768,
+				    			visibleItems:4
+				    		}
+				    	}
+				    });
+
+				});
+        </script>
+        <script type="text/javascript" src="js/jquery.flexisel.js"></script>
+
+    </div>
+ 
+    
+    <div class="clear"></div>
+    <!--End Calender-->
+
+</body>
+</html>
+
+@*<div>
+        <h4>Picture</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Size)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Size)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Type)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Type)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Desc)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Desc)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Price)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Price)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.url)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.url)
+            </dd>
+
+        </dl>
+    </div>*@
+

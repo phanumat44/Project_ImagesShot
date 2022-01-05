@@ -175,6 +175,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AnimalController.cs" />
     <Compile Include="Controllers\ArtController.cs" />
+    <Compile Include="Controllers\DetailController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NatureController.cs" />
@@ -213,6 +214,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css-detail\style.css" />
     <Content Include="Content\css-Register\font-awesome.css" />
     <Content Include="Content\css-Register\style.css" />
     <Content Include="Content\css-Register\style1.css" />
@@ -292,6 +294,8 @@
     <Content Include="Content\images\tick.png" />
     <Content Include="Content\images\tt.jpg" />
     <Content Include="Content\images\vit.jpg" />
+    <Content Include="Content\jquery-1.11.1.min.js" />
+    <Content Include="Content\jquery.flexisel.js" />
     <Content Include="Content\js\scripts.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
@@ -381,6 +385,7 @@
     <Content Include="Views\Pictures\Details.cshtml" />
     <Content Include="Views\Pictures\Edit.cshtml" />
     <Content Include="Views\Pictures\Index.cshtml" />
+    <Content Include="Views\Home\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

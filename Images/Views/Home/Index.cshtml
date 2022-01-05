@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_LayoutAll.cshtml";
 }
 
-
+@model IEnumerable<Images.Picture>
 @*@{
         var product1 = new SessionShop.Models.Mobiles { Id = 1, MobileName = "Green", Price = 25000 };
         var product2 = new SessionShop.Models.Mobiles { Id = 2, MobileName = "Purple", Price = 30000 };
@@ -66,6 +66,7 @@
                         </div>*@
                 </div>
             </div>
+
 
             <div class="col mb-5">
                 <div class="card h-100">
@@ -158,120 +159,59 @@
                         </div>*@
                 </div>
             </div>
+
             <div class="col mb-5">
                 <div class="card h-100">
-                    <!-- Sale badge-->
-                    <!--<div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>-->
-                    <!-- Product image-->
                     <img class="card-img-top" src="@Url.Content("~/Content/images/tt.jpg")" onclick="location.href = '@Url.Action("Tech","tech")'" />
-                    <!-- Product details-->
                     <div class="card-body p-4">
                         <div class="text-center">
                             <!-- Product name-->
                             <h5 onclick="location.href = '@Url.Action("Tech","tech")'">เทคโนโลยี</h5>
                             <!-- Product price-->
-                            <!-- <span class="text-muted text-decoration-line-through">$30,000</span>
-                            19,000-->
                         </div>
                     </div>
-                    <!-- Product actions-->
-                    @*<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center">
-                                <a id="btn_add" class="btn btn-outline-dark mt-auto" href="@Url.Action("Add","AddToCart",product5)">
-                                    <span class="glyphicon glyphicon-shopping-cart"></span>เพิ่มใส่ตะกร้า
-                                </a>
-                            </div>
-                        </div>*@
                 </div>
             </div>
-            @*<div class="col mb-5">
-                <div class="card h-100">
-                    <!-- Product image-->
-                    <img class="card-img-top" src="@Url.Content("~/Content/images/pd6.jpg")" />
-                    <!-- Product details-->
-                    <div class="card-body p-4">
-                        <div class="text-center">
-                            <!-- Product name-->
-                            <h5 class="fw-bolder">แพนกวิน</h5>
-                            <!-- Product price-->
-                            <!-- 33,000-->
-                        </div>
-                    </div>
-                    <!-- Product actions-->
-                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                        <div class="text-center">
-                            <a id="btn_add" class="btn btn-outline-dark mt-auto" href="@Url.Action("Add","AddToCart",product6)">
-                                <span class="glyphicon glyphicon-shopping-cart"></span>เพิ่มใส่ตะกร้า
-                            </a>
-                        </div>
-                    </div>*@
+
+
         </div>
     </div>
-    @*<div class="col mb-5">
-                <div class="card h-100">
-                    <!-- Sale badge-->
-                    <!--<div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>-->
-                    <!-- Product image-->
-                    <img class="card-img-top" src="@Url.Content("~/Content/images/pd7.jpg")" />
-                    <!-- Product details-->
-                    <div class="card-body p-4">
-                        <div class="text-center">
-                            <!-- Product name-->
-                            <h5 class="fw-bolder">หิมะขาว</h5>
-                            <!-- Product reviews-->
-                            <!--<div class="d-flex justify-content-center small text-warning mb-2">
-                <div class="bi-star-fill"></div>
-                <div class="bi-star-fill"></div>
-                <div class="bi-star-fill"></div>
-                <div class="bi-star-fill"></div>
-                <div class="bi-star-fill"></div>
-            </div>-->
-                            <!-- Product price-->
-                            <!-- <span class="text-muted text-decoration-line-through">$20.00</span>
-            18,000-->
-                        </div>
+</section>
+
+<section class="py-5">
+    <div class="container px-4 px-lg-1 mt-5">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            @for (var i = 1; i <= Model.ToList().Count(); i++)
+            {
+                var indexItem = i - 1;
+                if (i == 1 || i % 4 == 1)
+                {
+                    @:
+                }
+
+                <div class="col mb-5">
+                    <div class="card" style="width: 18rem;">
+
+                        <!-- Card Component-->
+                        <img class="card-img-top" src="@Url.Content("~/Content/images/" + (Model.ElementAt(indexItem).url))" />
+                        <h5>ชื่อภาพ: @Model.ElementAt(indexItem).Name </h5>
+                        @Html.ActionLink("Details", "Details", new
+                        {
+                            id =
+                          @Model.ElementAt(indexItem).Pic_ID
+                        }, new { @class = "btn btn-info" })
+                        <!-- End Card Component-->
+
                     </div>
-                    <!-- Product actions-->
-                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                        <div class="text-center">
-                            <a id="btn_add" class="btn btn-outline-dark mt-auto" href="@Url.Action("Add","AddToCart",product7)">
-                                <span class="glyphicon glyphicon-shopping-cart"></span>เพิ่มใส่ตะกร้า
-                            </a>
-                        </div>
-                    </div>
+                </div>
+
+                <!-- End Card Component-->
+
+                if (i % 4 == 0)
+                {
+                    @:
+                }
+            }
         </div>
-        </div>
-        <div class="col mb-5">
-                <div class="card h-100">
-                    <!-- Product image-->
-                    <img class="card-img-top" src="@Url.Content("~/Content/images/pd8.jpg")" />
-                    <!-- Product details-->
-                    <div class="card-body p-4">
-                        <div class="text-center">
-                            <!-- Product name-->
-                            <h5 class="fw-bolder">กุหลาบน้ำแข็ง</h5>
-                            <!-- Product reviews-->
-                            <!--<div class="d-flex justify-content-center small text-warning mb-2">
-                                <div class="bi-star-fill"></div>
-                                <div class="bi-star-fill"></div>
-                                <div class="bi-star-fill"></div>
-                                <div class="bi-star-fill"></div>
-                                <div class="bi-star-fill"></div>
-                            </div>-->
-                            <!-- Product price-->
-                            <!--28,000-->
-                        </div>
-                    </div>
-                    <!-- Product actions-->
-                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center">
-                                <a id="btn_add" class="btn btn-outline-dark mt-auto" href="@Url.Action("Add","AddToCart",product8)">
-                                    <span class="glyphicon glyphicon-shopping-cart"></span>เพิ่มใส่ตะกร้า
-                                </a>
-                            </div>
-                        </div>
-            </div>
-            </div>
-            </div>
-            </div>*@
+    </div>
 </section>
