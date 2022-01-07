@@ -5,15 +5,12 @@
     Layout = "~/Views/Shared/_LayoutAll.cshtml";
 }
 
-
-<br />
-
 <div class="container">
     <div class="row">
         <div class="col text-right">
             @Html.ActionLink("เพิ่มสินค้า", "Create", null, new { @class = "btn btn-success" })
             @*@Html.ActionLink("เรียง", "Index", new { sortOrder = ViewBag.BrandSortParm }, new
-    { @class = "btn btn-default" })*@
+                { @class = "btn btn-default" })*@
 
         </div>
     </div>
@@ -21,16 +18,16 @@
 
 <br />
 @*<div class="container">
-    <div class="row">
-        <div class="col text-right">
-            @using ((Html.BeginForm()))
-            {
-                @Html.TextBox("SearchString", null, new { @placeholder = "ค้นหาชื่อหรือรุ่น" })
-                <input type="submit" class="btn btn-info" value="Search" />
-            }
+        <div class="row">
+            <div class="col text-right">
+                @using ((Html.BeginForm()))
+                {
+                    @Html.TextBox("SearchString", null, new { @placeholder = "ค้นหาชื่อหรือรุ่น" })
+                    <input type="submit" class="btn btn-info" value="Search" />
+                }
+            </div>
         </div>
-    </div>
-</div>*@
+    </div>*@
 <div class="container">
     @for (var i = 1; i <= Model.ToList().Count(); i++)
     {

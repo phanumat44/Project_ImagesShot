@@ -5,28 +5,30 @@
     {
         @Html.AntiForgeryToken()
 
-        <ul class="nav navbar-nav navbar-right ">
-            @*<li>
-                    @Html.ActionLink(User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class="text-light", style ="text-decoration:none;" })
-                </li>*@
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="true">บัญชี</a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li> @Html.ActionLink("โปรไฟล์", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "dropdown-item", style = "text-decoration:none;" })</li>
-                    <li><hr class="dropdown-divider" /></li>
-                    <li>@Html.ActionLink("ขายภาพ", "Index", "Pictures", routeValues: null, htmlAttributes: new { title = "Puctures", @class = "dropdown-item", style = "text-decoration:none;" })</li>
-                    <li><hr class="dropdown-divider" /></li>
-                    <li><a class="dropdown-item" href="#!">ภาพที่ซื้อแล้ว</a></li>
-                    <li><hr class="dropdown-divider" /></li>
-                    <li><a class="dropdown-item" href="#!">ศิลปินที่ติดตาม</a></li>
-                    <li><hr class="dropdown-divider" /></li>
-                    <li><a class="dropdown-item" href="#!">รูปภาพที่ชอบ</a></li>
-                    <li><hr class="dropdown-divider" /></li>
-                    <li><a class="dropdown-item" style="color:red;" href="javascript:document.getElementById('logoutForm').submit()">ออกจากระบบ</a></li>
-                </ul>
-            </li>
-            @*<a class="btn btn-outline-light " href="javascript:document.getElementById('logoutForm').submit()">ออกจากระบบ</a>*@
+<ul class="nav navbar-nav navbar-right ">
+    @*<li>
+            @Html.ActionLink(User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class="text-light", style ="text-decoration:none;" })
+        </li>*@
+    <li>@Html.ActionLink("Order", "Order", "Pictures")</li>
+    <li>@Html.ActionLink("My Order", "Index", "OrderPics")</li>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="true">บัญชี</a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li> @Html.ActionLink("โปรไฟล์", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "dropdown-item", style = "text-decoration:none;" })</li>
+            <li><hr class="dropdown-divider" /></li>
+            <li>@Html.ActionLink("ขายภาพ", "Index", "Pictures", routeValues: null, htmlAttributes: new { title = "Puctures", @class = "dropdown-item", style = "text-decoration:none;" })</li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="#!">ภาพที่ซื้อแล้ว</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="#!">ศิลปินที่ติดตาม</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="#!">รูปภาพที่ชอบ</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" style="color:red;" href="javascript:document.getElementById('logoutForm').submit()">ออกจากระบบ</a></li>
         </ul>
+    </li>
+    @*<a class="btn btn-outline-light " href="javascript:document.getElementById('logoutForm').submit()">ออกจากระบบ</a>*@
+</ul>
     }
 }
 else

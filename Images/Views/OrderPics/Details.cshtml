@@ -1,0 +1,43 @@
+﻿@model Images.OrderPic
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAll.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>OrderPic</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.User_email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User_email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pic_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pic_ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.total)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.total)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Order_Pic }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

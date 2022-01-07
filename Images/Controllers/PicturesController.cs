@@ -12,16 +12,35 @@ namespace Images
 {
     public class PicturesController : Controller
     {
-        private Entities db = new Entities();
-        
+        private Entities1 db = new Entities1();
+
         // GET: Pictures
         public ActionResult Index()
         {
             return View(db.Pictures.ToList());
         }
 
+        public ActionResult Order()
+        {
+            return View(db.Pictures.ToList());
+        }
+
         // GET: Pictures/Details/5
         public ActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Picture picture = db.Pictures.Find(id);
+            if (picture == null)
+            {
+                return HttpNotFound();
+            }
+            return View(picture);
+        }
+
+        public ActionResult Place_Order(int? id)
         {
             if (id == null)
             {
@@ -59,7 +78,6 @@ namespace Images
                     file.SaveAs(path);
                     picture.url = fileName;
                 }
-
                 db.Pictures.Add(picture);
                 db.SaveChanges();
                 return RedirectToAction("Index");
