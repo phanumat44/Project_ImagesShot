@@ -1,0 +1,84 @@
+﻿@{ ViewBag.Title = "search";
+                Layout = "~/Views/Shared/_LayoutAll.cshtml"; }
+
+
+@model IEnumerable<Images.Picture>
+@*@{
+        var product1 = new SessionShop.Models.Mobiles { Id = 1, MobileName = "Green", Price = 25000 };
+        var product2 = new SessionShop.Models.Mobiles { Id = 2, MobileName = "Purple", Price = 30000 };
+        var product3 = new SessionShop.Models.Mobiles { Id = 3, MobileName = "White", Price = 21000 };
+        var product4 = new SessionShop.Models.Mobiles { Id = 4, MobileName = "Blue", Price = 31000 };
+        var product5 = new SessionShop.Models.Mobiles { Id = 5, MobileName = "Red", Price = 19000 };
+        var product6 = new SessionShop.Models.Mobiles { Id = 6, MobileName = "Black", Price = 33000 };
+        var product7 = new SessionShop.Models.Mobiles { Id = 7, MobileName = "Gold", Price = 18000 };
+        var product8 = new SessionShop.Models.Mobiles { Id = 8, MobileName = "Blacks", Price = 28000 };
+    }*@
+<!-- Header-->
+<!-- Header   Searching-->
+<header>
+    <div class="hero-image">
+
+        <div class="text-center text-white">
+            <br />
+            <br />
+            <br />
+            <br />
+
+            @using (Html.BeginForm("Search", "Home", FormMethod.Post))
+            {
+<div class="input-group">
+
+    @Html.TextBox("searchString", null, new { @class = "form-control" })
+
+    <button type="submit" class="btn btn btn-dark">ค้นหา</button>
+
+</div>            }
+            @*<div class="input-group">
+
+                    <input type="search" value="Search" class="form-control rounded" placeholder="ค้นหาภาพถ่ายตามความต้องการของคุณ" aria-label="Search"
+                           aria-describedby="search-addon" />
+
+                    <button type="button" class="btn btn btn-dark">ค้นหา</button>
+                </div>*@
+            <h1 class="hero-text">
+                รวมรูปภาพสวยๆพร้อมให้คุณดาวน์โหลด
+
+            </h1>
+            <p class="hero-text2">ปลดปล่อยพลังสร้างสรรค์ของคุณ</p>
+        </div>
+    </div>
+    <script>$(".img-fluid").addClass("wow fadeIn z-depth-1-half");
+
+        new WOW().init();</script>
+</header>
+
+<!-- Section-->
+
+
+<hr class="mb-5" />
+<!--Grid row-->
+<div class="container my-4">
+    <div class="row">
+
+
+        @for (var i = 1; i <= Model.ToList().Count(); i++)
+        {
+            var indexItem = i - 1;
+            if (i == 1 || i % 4 == 1)
+            {
+@:
+} <!--Grid column-->
+                <div class="col-lg-4 col-md-6 mb-4">
+
+                    <a style="cursor: pointer;" onclick="location.href = '@Url.Action("Details","Home", new {id = @Model.ElementAt(indexItem).Pic_ID })'">
+
+                        <img src="@Url.Content("~/Content/images/" + (Model.ElementAt(indexItem).url))" class="img-fluid mb-4" alt=""
+                             data-wow-delay="0.3s">
+                    </a>
+                </div> <!--Grid column--> <!--Grid column--> if (i % 4 == 0)
+                                                                {
+                                                @:
+                                            }
+                                        }
+    </div>
+</div>

@@ -316,6 +316,8 @@
     <Content Include="Content\jquery-1.11.1.min.js" />
     <Content Include="Content\jquery.flexisel.js" />
     <Content Include="Content\js\scripts.js" />
+    <Content Include="Content\preview-css\script.js" />
+    <Content Include="Content\preview-css\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -429,6 +431,8 @@
     <Content Include="Views\OrderPics\Index.cshtml" />
     <Content Include="Views\Pictures\Order.cshtml" />
     <Content Include="Views\Pictures\Place_Order.cshtml" />
+    <Content Include="Views\Shared\_Layout_nav_search.cshtml" />
+    <Content Include="Views\Home\search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

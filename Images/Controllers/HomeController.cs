@@ -15,6 +15,32 @@ namespace Images.Controllers
             return View(db.Pictures.ToList());
         }
 
+
+        [HttpPost]
+        public ViewResult search(string searchString)
+        {
+            /*   ViewBag.BrandSortParm = String.IsNullOrEmpty(sortOrder) ? "Brand_desc" : "";/*/
+
+               var pic = from p in db.Pictures
+                           select p;
+
+               if (!String.IsNullOrEmpty(searchString))
+               {
+
+                   pic = pic.Where(p =>  p.Name.ToUpper().Contains(searchString.ToUpper()));
+               }
+
+             /*  switch (sortOrder)
+               {
+                   case "Brand_desc":
+                       phone = phone.OrderByDescending(p => p.brand);
+                       break;
+                   default:
+                       phone = phone.OrderBy(p => p.product_id);
+                       break;
+               }*/
+            return View(pic);
+        }
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
