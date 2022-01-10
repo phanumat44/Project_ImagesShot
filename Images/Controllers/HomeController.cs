@@ -9,7 +9,7 @@ namespace Images.Controllers
 {
     public class HomeController : Controller
     {
-        private Entities db = new Entities();
+        private Entities1 db = new Entities1();
         public ActionResult Index()
         {
             return View(db.Pictures.ToList());
@@ -69,7 +69,7 @@ namespace Images.Controllers
         }
 
 
-        public ActionResult AddOrder(int? id, float? total)
+        public ActionResult AddOrder(int? id, int? total)
         {
             if (id == null)
             {
@@ -81,18 +81,12 @@ namespace Images.Controllers
                 return HttpNotFound();
             }
 
-            Entities1 db1 = new Entities1();
-            //var order = db1.OrderPics;
-
-            
-
-            
             OrderPic order = new OrderPic();
             order.User_email = User.Identity.Name;
             order.Pic_ID = id;
             order.total = total;
-            db1.OrderPics.Add(order);
-            db1.SaveChanges();
+            db.OrderPics.Add(order);
+            db.SaveChanges();
 
             
             return RedirectToAction("Index");

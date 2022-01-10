@@ -35,8 +35,11 @@
         @Html.LabelFor(model => model.Type, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.DropDownListFor(model => model.Type, new[] {
-        new SelectListItem() {Text = "Yes", Value = "Yes"},
-        new SelectListItem() {Text = "No", Value = "No"}
+        new SelectListItem() {Text = "ศิลปะ", Value = "ศิลปะ"},
+        new SelectListItem() {Text = "ธรรมชาติ", Value = "ธรรมชาติ"},
+        new SelectListItem() {Text = "สัตว์", Value = "สัตว์"},
+        new SelectListItem() {Text = "วิทยาศาสตร์", Value = "วิทยาศาสตร์"},
+        new SelectListItem() {Text = "เทคโนโลยี", Value = "เทคโนโลยี"}
     }, "Choose an option")
             @Html.ValidationMessageFor(model => model.Type, "", new { @class = "text-danger" })
         </div>

@@ -175,6 +175,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AnimalController.cs" />
     <Compile Include="Controllers\ArtController.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\DetailController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -433,6 +434,11 @@
     <Content Include="Views\Pictures\Place_Order.cshtml" />
     <Content Include="Views\Shared\_Layout_nav_search.cshtml" />
     <Content Include="Views\Home\search.cshtml" />
+    <Content Include="Views\Category\Art.cshtml" />
+    <Content Include="Views\Category\Nature.cshtml" />
+    <Content Include="Views\Category\Animal.cshtml" />
+    <Content Include="Views\Category\Science.cshtml" />
+    <Content Include="Views\Category\Tech.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
