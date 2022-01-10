@@ -67,5 +67,36 @@ namespace Images.Controllers
             }
             return View(picture);
         }
+
+
+        public ActionResult AddOrder(int? id, float? total)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Picture picture = db.Pictures.Find(id);
+            if (picture == null)
+            {
+                return HttpNotFound();
+            }
+
+            Entities1 db1 = new Entities1();
+            //var order = db1.OrderPics;
+
+            
+
+            
+            OrderPic order = new OrderPic();
+            order.User_email = User.Identity.Name;
+            order.Pic_ID = id;
+            order.total = total;
+            db1.OrderPics.Add(order);
+            db1.SaveChanges();
+
+            
+            return RedirectToAction("Index");
+            //return View(picture);
+        }
     }
 }

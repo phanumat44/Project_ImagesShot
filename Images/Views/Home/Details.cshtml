@@ -55,11 +55,10 @@
                     <span>หมวดหมู่: @Html.DisplayFor(model => model.Type)</span>
 
                     @* <div class="cable-choose">
-                            <button>Straight</button>
-                            <button>Coiled</button>
-                            <button>Long-coiled</button>
-                        </div>*@
-
+                    <button>Straight</button>
+                    <button>Coiled</button>
+                    <button>Long-coiled</button>
+                </div>*@
 
                 </div>
             </div>
@@ -70,7 +69,8 @@
 
             </div>
             <br />
-            <button href="#" style="width:170px;height:70px;font-size:20px;" class="btn btn-dark">ดาวน์โหลด</button>
+            @Html.HiddenFor(model => model.Pic_ID)
+            @Html.ActionLink("Order", "AddOrder", new { id = Model.Pic_ID, price = Model.Price })
         </div>
     </main>
 

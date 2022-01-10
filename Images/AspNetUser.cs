@@ -26,5 +26,7 @@ namespace Images
         public bool LockoutEnabled { get; set; }
         public int AccessFailedCount { get; set; }
         public string UserName { get; set; }
+        public string BankName { get; set; }
+        public string BankID { get; set; }
     }
 }

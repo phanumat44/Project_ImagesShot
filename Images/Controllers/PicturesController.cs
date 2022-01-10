@@ -17,7 +17,7 @@ namespace Images
         // GET: Pictures
         public ActionResult Index()
         {
-            return View(db.Pictures.ToList());
+            return View(db.Pictures.ToList().Where(picture => picture.user_email == User.Identity.Name));
         }
 
         public ActionResult Order()
@@ -78,6 +78,8 @@ namespace Images
                     file.SaveAs(path);
                     picture.url = fileName;
                 }
+
+                picture.user_email = User.Identity.Name;
                 db.Pictures.Add(picture);
                 db.SaveChanges();
                 return RedirectToAction("Index");
