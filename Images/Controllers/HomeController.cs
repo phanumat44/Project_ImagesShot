@@ -4,6 +4,9 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+
 
 namespace Images.Controllers
 {
@@ -69,13 +72,13 @@ namespace Images.Controllers
         }
 
 
-        public ActionResult AddOrder(int? id, int? total)
+        public ActionResult AddOrder(int? idx, decimal? total)
         {
-            if (id == null)
+            if (idx == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Picture picture = db.Pictures.Find(id);
+            Picture picture = db.Pictures.Find(idx);
             if (picture == null)
             {
                 return HttpNotFound();
@@ -83,7 +86,7 @@ namespace Images.Controllers
 
             OrderPic order = new OrderPic();
             order.User_email = User.Identity.Name;
-            order.Pic_ID = id;
+            order.Pic_ID = idx;
             order.total = total;
             db.OrderPics.Add(order);
             db.SaveChanges();
@@ -92,5 +95,6 @@ namespace Images.Controllers
             return RedirectToAction("Index");
             //return View(picture);
         }
+       
     }
 }

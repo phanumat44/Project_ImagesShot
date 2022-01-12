@@ -173,6 +173,7 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AnimalController.cs" />
     <Compile Include="Controllers\ArtController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
@@ -439,6 +440,10 @@
     <Content Include="Views\Category\Animal.cshtml" />
     <Content Include="Views\Category\Science.cshtml" />
     <Content Include="Views\Category\Tech.cshtml" />
+    <Content Include="Views\Home\Admin.cshtml" />
+    <Content Include="Views\Admin\Managment.cshtml" />
+    <Content Include="Views\Admin\Details.cshtml" />
+    <Content Include="Views\Admin\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

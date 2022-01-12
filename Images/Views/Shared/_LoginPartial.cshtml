@@ -9,25 +9,35 @@
     @*<li>
             @Html.ActionLink(User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class="text-light", style ="text-decoration:none;" })
         </li>*@
-    <li>@Html.ActionLink("Order", "Order", "Pictures")</li>
-    <li>@Html.ActionLink("My Order", "Index", "OrderPics")</li>
-    <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="true">บัญชี</a>
-        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li> @Html.ActionLink("โปรไฟล์", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "dropdown-item", style = "text-decoration:none;" })</li>
-            <li><hr class="dropdown-divider" /></li>
-            <li>@Html.ActionLink("ขายภาพ", "Index", "Pictures", routeValues: null, htmlAttributes: new { title = "Puctures", @class = "dropdown-item", style = "text-decoration:none;" })</li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#!">ภาพที่ซื้อแล้ว</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#!">ศิลปินที่ติดตาม</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#!">รูปภาพที่ชอบ</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" style="color:red;" href="javascript:document.getElementById('logoutForm').submit()">ออกจากระบบ</a></li>
-        </ul>
-    </li>
-    @*<a class="btn btn-outline-light " href="javascript:document.getElementById('logoutForm').submit()">ออกจากระบบ</a>*@
+    @* <li>@Html.ActionLink("Order", "Order", "Pictures")</li>
+        <li>@Html.ActionLink("My Order", "Index", "OrderPics")</li>*@
+    @if (User.Identity.Name != "admin@admin.com")
+    {
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="true">บัญชี</a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li> @Html.ActionLink("โปรไฟล์", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "dropdown-item", style = "text-decoration:none;" })</li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>@Html.ActionLink("ขายภาพ", "Index", "Pictures", routeValues: null, htmlAttributes: new { title = "Puctures", @class = "dropdown-item", style = "text-decoration:none;" })</li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="#!">ภาพที่ซื้อแล้ว</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="#!">ศิลปินที่ติดตาม</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="#!">รูปภาพที่ชอบ</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" style="color:red;" href="javascript:document.getElementById('logoutForm').submit()">ออกจากระบบ</a></li>
+            </ul>
+        </li>
+    }
+    @if (User.Identity.Name == "admin@admin.com")
+    {
+        <li>
+            <a class = "btn btn-outline-info" style="margin-left:7px" aria-current="page" href='@Url.Action("Admin","Home")'>การจัดการสำหรับแอดมิน</a>
+        </li>
+        <a class="btn btn-outline-danger " style="margin-left:5px" href="javascript:document.getElementById('logoutForm').submit()">ออกจากระบบ</a>
+    }
+
 </ul>
     }
 }
